@@ -21,10 +21,9 @@ class puppet_pipx (
   Stdlib::Absolutepath $pipx_home = '/opt/pipx',
   Stdlib::Absolutepath $pipx_bin_dir = '/usr/local/bin',
 ) {
-
   # Install pipx.
   if $manage_package {
-    package {'pipx': }
+    package { 'pipx': }
   }
 
   # Ensure package pipx is present before processing pipx provided ones.
@@ -32,7 +31,7 @@ class puppet_pipx (
 
   # Install pipx-global wrapper script.
   if $global {
-    file {'/usr/local/bin/pipx-global':
+    file { '/usr/local/bin/pipx-global':
       mode    => '0755',
       content => @("PIPX_GLOBAL"/L)
         #!/bin/bash
@@ -47,5 +46,4 @@ class puppet_pipx (
       require => File['/usr/local/bin/pipx-global']
     }
   }
-
 }
