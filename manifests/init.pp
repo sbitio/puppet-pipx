@@ -1,3 +1,5 @@
+# puppet_pipx
+#
 # @summary
 #   Install pipx and prepares environment to work with pipx package provider
 #
