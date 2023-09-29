@@ -1,10 +1,10 @@
 {
   "name": "sbitio-puppet_pipx",
   "version": "0.1.0",
-  "author": "sbitio",
+  "author": "sbit.io Tomorrow Consulting, S.L.",
   "summary": "",
   "license": "MIT",
-  "source": "",
+  "source": "http://github.com/sbitio/puppet-pipx",
   "dependencies": [
 
   ],
