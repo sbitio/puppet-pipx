@@ -6,6 +6,9 @@ All notable changes to this project will be documented in this file.
 
 **Features**
 
+ * `pipx` package provider
+ * Wrapper script `/usr/local/bin/pipx-global` to install pip packages system-wide
+
 **Bugfixes**
 
 **Known Issues**
