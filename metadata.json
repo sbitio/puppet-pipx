@@ -2,9 +2,11 @@
   "name": "sbitio-puppet_pipx",
   "version": "0.1.0",
   "author": "sbit.io Tomorrow Consulting, S.L.",
-  "summary": "",
+  "summary": "Provides pipx package provider",
   "license": "MIT",
   "source": "http://github.com/sbitio/puppet-pipx",
+  "project_page": "http://github.com/sbitio/puppet-pipx",
+  "issues_url": "https://github.com/sbitio/puppet-pipx/issues",
   "dependencies": [
     {
       "name": "puppetlabs/stdlib",
