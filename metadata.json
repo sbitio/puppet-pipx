@@ -1,5 +1,5 @@
 {
-  "name": "sbitio-puppet_pipx",
+  "name": "sbitio-pipx",
   "version": "0.1.0",
   "author": "sbit.io Tomorrow Consulting, S.L.",
   "summary": "Provides pipx package provider",
