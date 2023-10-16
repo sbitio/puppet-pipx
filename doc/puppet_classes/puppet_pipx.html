@@ -204,9 +204,7 @@ location</p>
 46
 47
 48
-49
-50
-51</pre>
+49</pre>
       </td>
       <td>
         <pre class="code"><span class="info file"># File 'manifests/init.pp', line 18</span>
@@ -217,10 +215,9 @@ class puppet_pipx (
   Stdlib::Absolutepath $pipx_home = &#39;/opt/pipx&#39;,
   Stdlib::Absolutepath $pipx_bin_dir = &#39;/usr/local/bin&#39;,
 ) {
-
   # Install pipx.
   if $manage_package {
-    package {&#39;pipx&#39;: }
+    package { &#39;pipx&#39;: }
   }
 
   # Ensure package pipx is present before processing pipx provided ones.
@@ -228,7 +225,7 @@ class puppet_pipx (
 
   # Install pipx-global wrapper script.
   if $global {
-    file {&#39;/usr/local/bin/pipx-global&#39;:
+    file { &#39;/usr/local/bin/pipx-global&#39;:
       mode    =&gt; &#39;0755&#39;,
       content =&gt; @(&quot;PIPX_GLOBAL&quot;/L)
         #!/bin/bash
@@ -243,7 +240,6 @@ class puppet_pipx (
       require =&gt; File[&#39;/usr/local/bin/pipx-global&#39;]
     }
   }
-
 }</pre>
       </td>
     </tr>

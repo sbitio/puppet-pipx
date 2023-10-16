@@ -85,17 +85,21 @@ module</a></p>
 <h2 id="label-Description">Description</h2>
 
 <p>This module provides a puppet solution to overcome the implications of <a
-href="https://peps.python.org/pep-0668">peps.python.org/pep-0668</a>/ by
-leveraging <code>pipx</code>.</p>
+href="https://peps.python.org/pep-0668/">PEP 668 – Marking Python base
+environments as “externally managed”</a> by leveraging <a
+href="https://github.com/pypa/pipx">pipx</a>.</p>
 
-<p>For such a thing, it provides a <code>pipx</code> package provider tweaked
-to (optionally) install python dependencies system-wide.</p>
+<p>For such a thing, it provides a <code>pipx</code> package provider enabled
+to (optionally) install python dependencies system-wide. The provider code
+is based on <a
+href="https://github.com/puppetlabs/puppet/blob/main/lib/puppet/provider/package/pip.rb">Puppet’s
+pip provider</a>.</p>
 
 <p>Due to <code>pipx</code> doesn&#39;t provide an option to install packages
 system-wide (<a href="https://github.com/pypa/pipx/issues/754">ref</a>),
-this module provides the <code>pipx-global</code> wrapper script installed
-to <code>/usr/local/bin</code>. You can use this wrapper to directly manage
-pip packages system-wide.</p>
+this module also provides the <code>pipx-global</code> wrapper script
+installed to <code>/usr/local/bin</code>. You can use this wrapper to
+directly manage pip packages system-wide.</p>
 
 <h2 id="label-Usage">Usage</h2>
 
@@ -108,7 +112,14 @@ package { certbot:
   provider: pipx
 }</code></pre>
 
-<p>See</p>
+<p>It will perform:  * Install <code>pipx</code> package via OS default
+provider  * Install <code>/usr/local/bin/pipx-global</code> script  *
+Install <code>certbot</code> via <code>pipx</code> to
+<code>/opt/pipx</code> and binaries symlinked from
+<code>/usr/local/bin</code></p>
+
+<p>You can tweak this default behaviour with the main class parameters. See <a
+href="./doc/">Code documentation</a> for reference.</p>
 
 <h2 id="label-Limitations">Limitations</h2>
 
@@ -131,6 +142,14 @@ href="https://github.com/sbitio/puppet-pipx">GitHub</a>.</p>
 <p>Please log issues for any bug report, feature or support request.</p>
 
 <p>Pull requests are welcome.</p>
+
+<h2 id="label-Disclaimer">Disclaimer</h2>
+
+<h3 id="label-A+note+on+quality+score">A note on quality score</h3>
+
+<p>This module has a poor quality score. We&#39;re not fixing it because it
+comes from Puppet&#39;s pip package provider code it is based. It makes no
+sense to us to address lint warnings and diverge from the base code.</p>
 
 <h2 id="label-License">License</h2>
 
