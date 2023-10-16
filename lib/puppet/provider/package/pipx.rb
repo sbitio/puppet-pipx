@@ -1,8 +1,9 @@
+# frozen_string_literal: true
+
 require 'json'
 require 'open3'
 
-Puppet::Type.type(:package).provide :pipx,
-  :parent => :pip do
+Puppet::Type.type(:package).provide :pipx, :parent => :pip do
 
   desc "Python packages via `pipx`.
 
