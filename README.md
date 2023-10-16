@@ -16,8 +16,9 @@
 This module provides a puppet solution to overcome the implications of [PEP 668 – Marking Python base environments as “externally managed”](https://peps.python.org/pep-0668/)
 by leveraging [pipx](https://github.com/pypa/pipx).
 
-For such a thing, it provides a `pipx` package provider tweaked to
-(optionally) install python dependencies system-wide.
+For such a thing, it provides a `pipx` package provider enabled to (optionally)
+install python dependencies system-wide. The provider code is based
+on [Puppet's pip provider](https://github.com/puppetlabs/puppet/blob/main/lib/puppet/provider/package/pip.rb).
 
 Due to `pipx` doesn't provide an option to install packages system-wide ([ref](https://github.com/pypa/pipx/issues/754)),
 this module also provides the `pipx-global` wrapper script installed to `/usr/local/bin`.
@@ -60,6 +61,13 @@ Please log issues for any bug report, feature or support request.
 
 Pull requests are welcome.
 
+## Disclaimer
+
+### A note on quality score
+
+This module has a poor quality score. We're not fixing it because it comes from
+Puppet's pip package provider code it is based. It makes no sense to us to
+address lint warnings and diverge from the base code.
 
 ## License
 
