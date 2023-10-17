@@ -1,4 +1,4 @@
-# puppet_pipx
+# pipx
 #
 # @summary
 #   Install pipx and prepares environment to work with pipx package provider
@@ -15,7 +15,7 @@
 # @param pipx_bin_dir
 #   Value for the PIPX_BIN_DIR environment variable when installing in a global location
 #
-class puppet_pipx (
+class pipx (
   Boolean $manage_package = true,
   Boolean $global = true,
   Stdlib::Absolutepath $pipx_home = '/opt/pipx',
