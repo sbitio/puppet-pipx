@@ -1,6 +1,6 @@
 {
   "name": "sbitio-pipx",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "author": "sbit.io Tomorrow Consulting, S.L.",
   "summary": "Provides pipx package provider",
   "license": "MIT",
