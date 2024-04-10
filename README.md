@@ -29,7 +29,7 @@ You can use this wrapper to directly manage pip packages system-wide.
 The most basic thing to do is to just include the main class and use the package provider:
 
 ```
-include python_pipx
+include pipx
 
 package { certbot:
   provider: pipx
