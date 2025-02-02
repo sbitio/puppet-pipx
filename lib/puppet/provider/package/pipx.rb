@@ -116,4 +116,13 @@ Puppet::Type.type(:package).provide :pipx, :parent => :pip do
     command_options
   end
 
+  def uninstall
+    command = resource_or_provider_command
+    self.class.validate_command(command)
+
+    command_options = ["uninstall", "-q", @resource[:name]]
+
+    execute([command, command_options])
+  end 
+  
 end
